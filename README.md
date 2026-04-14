@@ -1,48 +1,28 @@
 # Latest News
 
+```bash
+./bin/SimAI_analytical -w ./example/gpt-3_tp8_pp8_dp128.txt -g 8192  -nv 360 -nic 48.5 -n_p_s 8 -g_p_s 8 -r gpt3-
+```
+
+```bash
+./bin/SimAI_analytical -w ./example/Qwen2.5_tp4_pp8_dp128.txt -g 4096  -nv 360 -nic 48.5 -n_p_s 8 -g_p_s 8 -r Qwen2.5-
+```
+
+```bash
+./bin/SimAI_analytical -w ./example/llama-3_tp8_pp16_dp128.txt -g 16384  -nv 360 -nic 48.5 -n_p_s 8 -g_p_s 8 -r llama3-
+```
+
 ### Recent Updates
 
-- [2025/12] **SimAI 1.5 Released!** This release brings end-to-end simulation for multi-request **inference** workloads. Key features include:
-  
+- \[2025/12] **SimAI 1.5 Released!** This release brings end-to-end simulation for multi-request **inference** workloads. Key features include:
   - **Advanced Inference Simulation:** Model complex scenarios with Prefill/Decode separation.
   - **Modern Model Support:** Now includes DeepSeek, Qwen3Moe and Qwen3Next. See [AICB's README](./aicb/README.md) for more detailed information.
   - **Request Scheduling:** Request scheduling is now handled by a component adapted from Microsoft's [Vidur](https://github.com/microsoft/vidur). See [Vidur-Alibabacloud's README](./vidur-alibabacloud/README.md) for more detailed information.
+- \[2025/11] [AICB](https://github.com/aliyun/aicb/tree/master) now supports generating **prefill/decode** inference workloads for **DeepSeek**, **Qwen3-MoE** and **Qwen3-Next**.
+- \[2025/09] [AICB](https://github.com/aliyun/aicb/tree/master) now supports generating training workloads for DeepSeek. Thanks to [@parthpower](https://github.com/parthpower) for this contribution.
+- \[2025/06] The code of SimCCL is first released in the branch [SimCCL](https://github.com/aliyun/SimAI/tree/SimCCL) and will be released in SimCCL repository soon.
 
-- [2025/11] [AICB](https://github.com/aliyun/aicb/tree/master) now supports generating **prefill/decode** inference workloads for **DeepSeek**, **Qwen3-MoE** and **Qwen3-Next**.
 
-- [2025/09] [AICB](https://github.com/aliyun/aicb/tree/master) now supports generating training workloads for DeepSeek. Thanks to [@parthpower](https://github.com/parthpower) for this contribution.
-
-- [2025/06] The code of SimCCL is first released in the branch [SimCCL](https://github.com/aliyun/SimAI/tree/SimCCL) and will be released in SimCCL repository soon.
-
-**We warmly welcome contributions from the community!** If you are interested in helping shape the future of SimAI, please feel free to open an issue to discuss your ideas or submit a pull request.
-
-<div align="center">
-🎯 <b>Events & Community Engagement</b> 🎯
-
-### 📅 Upcoming Events
-
-| Date | Event | Location | Content | Type |
-|:----:|:----- |:-------- |:------- |:----:|
-| --   |       |          |         |      |
-
-### 🌟 Past Events
-
-| Date             | Event                                                                    | Location                | Content                                                  | Type          |
-|:----------------:|:------------------------------------------------------------------------ |:----------------------- |:-------------------------------------------------------- |:-------------:|
-| Dec 30, 2025     | SimAI 1.5                                                                | 🌐 Online               | The release of SimAI 1.5                                 | 💻 Virtual    |
-| Jun 4, 2025      | The first workshop of the SimAI community                                | 📍 Peking University    | Three talks from community contributors                  | 🎓 On-site    |
-| May 24, 2025     | The 28th Chinasys workshop                                               | 📍 Chongqing University | An invited talk about SimAI                              | 🎓 On-site    |
-| Dec 27, 2024     | SimAI Technical Presentation                                             | 📍 Beihang University   | SimAI Technical Sharing & Discussion                     | 🎓 On-site    |
-| Dec 6, 2024      | HKUST Technical Workshop                                                 | 📍 HKUST(GZ)            | SimAI Technical Sharing & Discussion                     | 🎓 On-site    |
-| Dec 5, 2024      | [Bench'24 Conference](https://mp.weixin.qq.com/s/STic_E12xMhZRxhzK9wRnw) | 📍 Guangzhou            | SimAI Tutorial & Deep-dive Session                       | 🎓 On-site    |
-| Nov 26, 2024     | SimAI Community Live Stream                                              | 🌐 Online               | Interactive Technical Discussion & Demo (400+ Attendees) | 💻 Virtual    |
-| Nov 15, 2024     | Technical Workshop                                                       | 📍 Thousand Island Lake | SimAI Offline Technical Exchange                         | 🎯 On-site    |
-| Oct 18, 2024     | Guest Lecture                                                            | 📍 Fudan University     | SimAI Tutorial & Public Course                           | 🎓 On-site    |
-| Sept 24-26, 2024 | CCF HPC China 2024                                                       | 📍 Wuhan                | SimAI Introduction & Technical Presentation              | 🎤 Conference |
-
-</div>
-
----
 
 # Table of Contents
 
@@ -89,7 +69,7 @@ SimAI --|--- <a href="https://github.com/aliyun/SimCCL">SimCCL</a>
 Building on pure simulation capabilities, SimAI has evolved into a versatile full-stack toolkit comprising four components ([aicb](https://github.com/aliyun/aicb), [SimCCL](https://github.com/aliyun/SimCCL), [astra-sim-alibabacloud](https://github.com/aliyun/SimAI/tree/master/astra-sim-alibabacloud), [ns-3-alibabacloud](https://github.com/aliyun/ns-3-alibabacloud)). These components can be combined in various ways to achieve different functionalities. Below, we present the six main usage scenarios for SimAI. We encourage users to explore even more possibilities with this powerful tool.
 
 Below is the architecture diagram of the SimAI Simulator:
-![SimAI_Arc](./docs/images/SimAI_Arc.png)
+![SimAI\_Arc](./docs/images/SimAI_Arc.png)
 
 astra-sim-alibabacloud is extended from [astra-sim](https://github.com/astra-sim/astra-sim/tree/ASTRA-sim-1.0). We are grateful to the astra-sim team for their excellent work and open-source contribution. We have integrated NCCL algorithms and added some new features.
 
@@ -119,13 +99,13 @@ SimAI work has been accepted by NSDI'25 Spring, for more details, please refer t
 
 *SimAI: Unifying Architecture Design and Performance Tuning for Large-Scale Large Language Model Training with Scalability and Precision.*
 
-[[pdf](https://ennanzhai.github.io/pub/nsdi25spring-simai.pdf)] / [[slides](./docs/SimAI_Intro_Online.pdf)] / [[video](https://n.dingtalk.com/dingding/live-room/index.html?roomId=OF5BkBUXVxmgsK7x&liveUuid=305736cd-aa70-498b-8003-2b471a53decd)]
+\[[pdf](https://ennanzhai.github.io/pub/nsdi25spring-simai.pdf)] / \[[slides](./docs/SimAI_Intro_Online.pdf)] / \[[video](https://n.dingtalk.com/dingding/live-room/index.html?roomId=OF5BkBUXVxmgsK7x\&liveUuid=305736cd-aa70-498b-8003-2b471a53decd)]
 
 We encourage innovative research and extensions based on SimAI. Welcome to join our community group or reach out via email for discussion. We may provide technical support.
 
 # Quick Start
 
-Here are some simple examples, SimAI full tutorials can be found here: [**SimAI@Tutorial**](./docs/Tutorial.md), [**aicb@Tutorial**](https://github.com/aliyun/aicb/blob/master/training/tutorial.md), [SimCCL@Tutorial], [ns-3-alibabacloud@Tutorial]
+Here are some simple examples, SimAI full tutorials can be found here: **[SimAI@Tutorial](./docs/Tutorial.md)**, **[aicb@Tutorial](https://github.com/aliyun/aicb/blob/master/training/tutorial.md)**, \[SimCCL\@Tutorial], \[ns-3-alibabacloud\@Tutorial]
 
 ## Setup
 
@@ -195,17 +175,11 @@ docker run --gpus all -it --rm image:latest
 A huge thanks to the following people and organizations who have contributed to this project:
 
 - TianHao Fu (Peking University) and [TELOS-syslab](https://github.com/TELOS-syslab/),
-
 - Parth Parikh (KEYSIGHT),
-
 - Sarah-Michelle Hammer & Ziyi Wang (TU-Berlin),
-
 - Xinyue Li (BUPT),
-
 - Tong Chen (Zhejiang University),
-
 - Ming Wang (BUPT),
-
 - Tao Jiang (Institute of Computing Technology, Chinese Academy of Sciences),
 
 and many other individual contributors from the community (See the [Contributors to aliyun/SimAI · GitHub](https://github.com/aliyun/SimAI/graphs/contributors)).
@@ -216,7 +190,7 @@ We also thank Chenning Li (MIT CSAIL) who initiated the cooperation on integrati
 
 # Contact us
 
-Please email Gang Lu (yunding.lg@alibaba-inc.com), Feiyang Xue (xuefeiyang.xfy@alibaba-inc.com) or Qingxu Li (qingxu.lqx@alibaba-inc.com) if you have any questions.
+Please email Gang Lu (<yunding.lg@alibaba-inc.com>), Feiyang Xue (<xuefeiyang.xfy@alibaba-inc.com>) or Qingxu Li (<qingxu.lqx@alibaba-inc.com>) if you have any questions.
 
 Welcome to join the SimAI community chat groups, with the DingTalk group on the left and the WeChat group on the right.
 
@@ -225,4 +199,3 @@ Welcome to join the SimAI community chat groups, with the DingTalk group on the 
     <img src="./docs/images/simai_wechat.jpeg" alt="SimAI WeChat" style="width: 300px; height: auto;">
 </div>
 
-<br/>
